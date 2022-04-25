@@ -3,7 +3,7 @@ package warapi
 import (
 	"encoding/json"
 
-	"github.com/j33pguy/fxterminal/utils"
+	fxu "github.com/j33pguy/fxutils"
 )
 
 type WorldLayout struct {
@@ -19,8 +19,8 @@ type WorldLayout struct {
 }
 
 func (s WorldLayout) GetWorldLayout() *WorldLayout {
-	file := "/home/j33p/Projects/J33PGUY/FoxholeTerminal/warapi/WorldLayout.json"
-	worldLayout := utils.ReadJsonFile(file)
+	file := "WorldLayout.json"
+	worldLayout := fxu.ReadJsonFile(file)
 
 	o := new(WorldLayout)
 	json.Unmarshal(*worldLayout, o)

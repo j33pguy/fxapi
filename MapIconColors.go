@@ -3,7 +3,7 @@ package warapi
 import (
 	"encoding/json"
 
-	"github.com/j33pguy/fxterminal/utils"
+	fxu "github.com/j33pguy/fxutils"
 )
 
 // DONE
@@ -18,8 +18,8 @@ type MapIconColors struct {
 }
 
 func (s MapIconColors) GetMapIconColors() *MapIconColors {
-	file := "/home/j33p/Projects/J33PGUY/FoxholeTerminal/warapi/MapIconColors.json"
-	mapIconColors := utils.ReadJsonFile(file)
+	file := "MapIconColors.json"
+	mapIconColors := fxu.ReadJsonFile(file)
 
 	o := new(MapIconColors)
 	json.Unmarshal(*mapIconColors, o)
