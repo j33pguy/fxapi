@@ -1,8 +1,9 @@
 package fxapi
 
 import (
-	"encoding/json"
 	"time"
+
+	fxu "github.com/j33pguy/fxutils"
 )
 
 // DONE
@@ -16,13 +17,21 @@ type WorldConquest struct {
 	RequiredVictoryTowns int       `json:"requiredVictoryTowns"`
 }
 
-func (s WorldConquest) GetWorldConquest() *WorldConquest {
+/* func (s WorldConquest) GetWorldConquest() *WorldConquest { */
+/* param := "/worldconquest/war" */
+/* res := fxu.GetFuncResourceApi(param) */
+/* baseurl := Baseurl(param) */
+/* resp := Response(*baseurl) */
+/*  */
+/* o := new(WorldConquest) */
+/* json.Unmarshal(*resp, o) */
+/*  */
+/* return o */
+/* } */
+
+func GetWorldConquest() *WorldConquest {
 	param := "/worldconquest/war"
-	baseurl := Baseurl(param)
-	resp := Response(*baseurl)
+	res := fxu.GetFuncResourceApi[WorldConquest](param)
 
-	o := new(WorldConquest)
-	json.Unmarshal(*resp, o)
-
-	return o
+	return res
 }

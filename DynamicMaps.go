@@ -1,9 +1,5 @@
 package fxapi
 
-import (
-	"encoding/json"
-)
-
 // DONE
 type DynamicMap struct {
 	RegionID             int `json:"regionId"`
@@ -20,13 +16,20 @@ type DynamicMap struct {
 	Version      int           `json:"version"`
 }
 
-func (s DynamicMap) GetDynamicMap(mapName string) *DynamicMap {
-	param := "/worldconquest/maps/" + mapName + "/dynamic/public"
-	baseurl := Baseurl(param)
-	resp := Response(*baseurl)
+/* func (s DynamicMap) GetDynamicMap(mapName string) *DynamicMap { */
+/* param := "/worldconquest/maps/" + mapName + "/dynamic/public" */
+/* baseurl := Baseurl(param) */
+/* resp := Response(*baseurl) */
+/*  */
+/* o := new(DynamicMap) */
+/* json.Unmarshal(*resp, o) */
+/*  */
+/* return o */
+/* } */
 
-	o := new(DynamicMap)
-	json.Unmarshal(*resp, o)
+func (s StaticMap) GetStaticMap(mapName string) *StaticMap {
+	param := "/worldconquest/maps/" + mapName + "/static"
+	res := fxu.GetFuncResourceApi[StaticMap](param)
 
-	return o
+	return res
 }
