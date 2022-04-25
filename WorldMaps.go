@@ -1,19 +1,15 @@
 package fxapi
 
 import (
-	"encoding/json"
+	fxu "github.com/j33pguy/fxutils"
 )
 
 // DONE
 type WorldMaps []string
 
-func (s WorldMaps) GetWorldMaps() *WorldMaps {
+func GetWorldMaps() *WorldMaps {
 	param := "/worldconquest/maps"
-	baseurl := Baseurl(param)
-	resp := Response(*baseurl)
+	res := fxu.GetFuncResourceApi[WorldMaps](param)
 
-	o := new(WorldMaps)
-	json.Unmarshal(*resp, o)
-
-	return o
+	return res
 }

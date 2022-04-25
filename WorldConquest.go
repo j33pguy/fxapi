@@ -17,18 +17,6 @@ type WorldConquest struct {
 	RequiredVictoryTowns int       `json:"requiredVictoryTowns"`
 }
 
-/* func (s WorldConquest) GetWorldConquest() *WorldConquest { */
-/* param := "/worldconquest/war" */
-/* res := fxu.GetFuncResourceApi(param) */
-/* baseurl := Baseurl(param) */
-/* resp := Response(*baseurl) */
-/*  */
-/* o := new(WorldConquest) */
-/* json.Unmarshal(*resp, o) */
-/*  */
-/* return o */
-/* } */
-
 func GetWorldConquest() *WorldConquest {
 	param := "/worldconquest/war"
 	res := fxu.GetFuncResourceApi[WorldConquest](param)

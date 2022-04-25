@@ -1,7 +1,7 @@
 package fxapi
 
 import (
-	"encoding/json"
+	fxu "github.com/j33pguy/fxutils"
 )
 
 // DONE
@@ -19,13 +19,9 @@ type StaticMap struct {
 	Version     int   `json:"version"`
 }
 
-func (s StaticMap) GetStaticMap(mapName string) *StaticMap {
+func GetStaticMap(mapName string) *StaticMap {
 	param := "/worldconquest/maps/" + mapName + "/static"
-	baseurl := Baseurl(param)
-	resp := Response(*baseurl)
+	res := fxu.GetFuncResourceApi[StaticMap](param)
 
-	o := new(StaticMap)
-	json.Unmarshal(*resp, o)
-
-	return o
+	return res
 }

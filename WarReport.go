@@ -1,7 +1,7 @@
 package fxapi
 
 import (
-	"encoding/json"
+	fxu "github.com/j33pguy/fxutils"
 )
 
 // DONE
@@ -12,13 +12,9 @@ type WarReport struct {
 	DayOfWar           int `json:"dayOfWar"`
 }
 
-func (s WarReport) GetWarReport(mapName string) *WarReport {
+func GetWarReport(mapName string) *WarReport {
 	param := "/worldconquest/warReport/" + mapName
-	baseurl := Baseurl(param)
-	resp := Response(*baseurl)
+	res := fxu.GetFuncResourceApi[WarReport](param)
 
-	o := new(WarReport)
-	json.Unmarshal(*resp, o)
-
-	return o
+	return res
 }
