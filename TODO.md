@@ -2,6 +2,8 @@
 
 This is meant to be a collection of TODO items for this dir, this will span across all files in this directory, as well as any issues from GitHub
 
+- Code mared w/ comment // DONE means I have done review for working state of current version, will use git commit message to track date/status.
+
 ## Verbage
 - TODO - Item waiting to be implemented
 - DOING - Item currently being worked on
@@ -11,9 +13,14 @@ This is meant to be a collection of TODO items for this dir, this will span acro
 
 ## TODO Items
 - [ ] Move this list to gh issues for project
-- [ ] Move all common code to a page and call where needed...Looking to wipe out repeating code
-- [X] Func for reading JSON files seperated to own package in utils
 - [ ] Finish going through docs and implement the rest of the api:
     - [ ] Nukes
     - [ ] Map Flags
-- [X] cleand up code, removed all print statements
+
+## DONE Items
+- [X] Move all common code to a page and call where needed...Looking to wipe out repeating code
+    - First pass has been done, will need to go back over
+- [X] Func for reading JSON files seperated to own package in utils
+- [X] Cleaned up code, moving to init package as a state
+    - First pass has been done
+
