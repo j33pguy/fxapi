@@ -1,4 +1,4 @@
-package warapi
+package fxapi
 
 import (
 	"io/ioutil"

@@ -1,4 +1,4 @@
-package warapi
+package fxapi
 
 func Baseurl(param string) *string {
 	const host = "https://war-service-live.foxholeservices.com/api"
