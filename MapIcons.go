@@ -6,7 +6,7 @@ import (
 	fxu "github.com/j33pguy/fxutils"
 )
 
-// DONE
+// DONE 4/25/22
 type MapIcons struct {
 	MapIcons []struct {
 		IconName   string `json:"IconName"`
@@ -17,7 +17,7 @@ type MapIcons struct {
 
 func (s MapIcons) GetMapIcons() *MapIcons {
 	file := "MapIcons.json"
-	mapDat := fxu.ReadJsonFile(file)
+	mapDat := fxu.GetLocalJson[MapIcons](file)
 
 	o := new(MapIcons)
 	json.Unmarshal(*mapDat, o)

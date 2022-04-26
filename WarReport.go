@@ -4,7 +4,7 @@ import (
 	fxu "github.com/j33pguy/fxutils"
 )
 
-// DONE
+// DONE 4/25/22
 type WarReport struct {
 	TotalEnlistments   int `json:"totalEnlistments"`
 	ColonialCasualties int `json:colonialCasualties"`
@@ -14,7 +14,7 @@ type WarReport struct {
 
 func GetWarReport(mapName string) *WarReport {
 	param := "/worldconquest/warReport/" + mapName
-	res := fxu.GetFuncResourceApi[WarReport](param)
+	res := fxu.GetFXApi[WarReport](param)
 
 	return res
 }

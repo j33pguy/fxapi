@@ -6,7 +6,7 @@ import (
 	fxu "github.com/j33pguy/fxutils"
 )
 
-// DONE
+// DONE 4/25/22
 type WorldConquest struct {
 	WarID                string    `json:"warId"`
 	WarNumber            int       `json:"warNumber"`
@@ -19,7 +19,7 @@ type WorldConquest struct {
 
 func GetWorldConquest() *WorldConquest {
 	param := "/worldconquest/war"
-	res := fxu.GetFuncResourceApi[WorldConquest](param)
+	res := fxu.GetFXApi[WorldConquest](param)
 
 	return res
 }

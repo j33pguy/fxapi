@@ -2,7 +2,7 @@ package fxapi
 
 import fxu "github.com/j33pguy/fxutils"
 
-// DONE
+// DONE 4/25/22
 type DynamicMap struct {
 	RegionID             int `json:"regionId"`
 	ScorchedVictoryTowns int `json:"scorchedVictoryTowns"`
@@ -18,9 +18,9 @@ type DynamicMap struct {
 	Version      int           `json:"version"`
 }
 
-func (s StaticMap) GetStaticMap(mapName string) *StaticMap {
+func GetDynamicMap(mapName string) *DynamicMap {
 	param := "/worldconquest/maps/" + mapName + "/static"
-	res := fxu.GetFuncResourceApi[StaticMap](param)
+	res := fxu.GetFXApi[DynamicMap](param)
 
 	return res
 }

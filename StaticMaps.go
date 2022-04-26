@@ -1,10 +1,10 @@
-package fxapi
+ ackage fxapi
 
 import (
 	fxu "github.com/j33pguy/fxutils"
 )
 
-// DONE
+// DONE 4/25/22
 type StaticMap struct {
 	RegionID             int           `json:"regionId"`
 	ScorchedVictoryTowns int           `json:"scorchedVictoryTowns"`
@@ -21,7 +21,7 @@ type StaticMap struct {
 
 func GetStaticMap(mapName string) *StaticMap {
 	param := "/worldconquest/maps/" + mapName + "/static"
-	res := fxu.GetFuncResourceApi[StaticMap](param)
+	res := fxu.GetFXApi[StaticMap](param)
 
 	return res
 }
