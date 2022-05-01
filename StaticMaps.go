@@ -1,4 +1,4 @@
- ackage fxapi
+package fxapi
 
 import (
 	fxu "github.com/j33pguy/fxutils"
